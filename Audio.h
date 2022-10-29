@@ -32,10 +32,12 @@ class SineSample {
 
     // construct a sample at the given frequency (Hz) with the right channel shifted by the given phase_time (in s). A positive phase_time advances the right channel relative to the left.
     // volume ranges from 0 to ((1UL << 32) - 1)
-    SineSample(int frequency, float phase_time, int volume);
+    SineSample(int frequency, float phase_time, int left_volume, int right_volume);
 
     // start a dma transfer of the sample to the i2s controller
     ZeroDMAstatus run_dma_tranfer();
+
+    static void print_status(ZeroDMAstatus status);
 };
 
 #endif

@@ -12,14 +12,14 @@ ZeroDMAstatus SineSample::init_dma()
     return dma.allocate();
 }
 
-SineSample::SineSample(int frequency, float phase_time, int volume)
+SineSample::SineSample(int frequency, float phase_time, int left_volume, int right_volume)
 {
     int *sample = data;
     for (int i = 0; i < buf_size / 2; i++)
     {
         float time = (float)i / (float)sample_freq;
-        *sample++ = sin(2 * PI * time * (float)frequency ) * volume;
-        *sample++ = sin(2 * PI * (time + phase_time) * (float)frequency ) * volume;
+        *sample++ = sin(2 * PI * time * (float)frequency ) * left_volume;
+        *sample++ = sin(2 * PI * (time + phase_time) * (float)frequency ) * right_volume;
     }
 }
 
@@ -55,7 +55,11 @@ ZeroDMAstatus SineSample::run_dma_tranfer() {
 
     // TODO: We need to loop samples, otherwise we will need to be constantly transfering transfers. We 
     // We need to dynamically adjust the buf_size so that it contains a complete period of the sample. Otherwise, looping the sample will cut off part of the last period.
-    dma.loop(false);
+    dma.loop(true);
     i2s.enableTx();
     return dma.startJob();
+}
+
+void SineSample::print_status(ZeroDMAstatus status) {
+    dma.printStatus(status);
 }

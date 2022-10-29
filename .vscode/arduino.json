@@ -1,7 +1,7 @@
 {
     "configuration": "usbstack=arduino,debug=off,sercom4=include",
     "board": "Seeeduino:samd:seeed_XIAO_m0",
-    "port": "/dev/ttyS0",
+    "port": "/dev/ttyACM0",
     "programmer": "Seeeduino:adafruit_atmel_ice",
     "sketch": "ecen1400-code.ino"
 }
