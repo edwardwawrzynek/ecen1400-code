@@ -32,6 +32,7 @@
                 "/home/edward/.arduino15/packages/Seeeduino/hardware/samd/1.8.3/variants/XIAO_m0",
                 "/home/edward/Arduino/libraries/Adafruit_Zero_I2S_Library",
                 "/home/edward/.arduino15/packages/Seeeduino/hardware/samd/1.8.3/libraries/Adafruit_ZeroDMA",
+                "/home/edward/.arduino15/packages/Seeeduino/hardware/samd/1.8.3/libraries/Wire",
                 "/home/edward/.arduino15/packages/Seeeduino/tools/arm-none-eabi-gcc/7-2017q4/arm-none-eabi/include/c++/7.2.1",
                 "/home/edward/.arduino15/packages/Seeeduino/tools/arm-none-eabi-gcc/7-2017q4/arm-none-eabi/include/c++/7.2.1/arm-none-eabi",
                 "/home/edward/.arduino15/packages/Seeeduino/tools/arm-none-eabi-gcc/7-2017q4/arm-none-eabi/include/c++/7.2.1/backward",
