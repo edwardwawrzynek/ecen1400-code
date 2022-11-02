@@ -550,6 +550,7 @@ unsigned int AudioControlSGTL5000::read(unsigned int reg)
 	Wire.beginTransmission(i2c_addr);
 	Wire.write(reg >> 8);
 	Wire.write(reg);
+	Serial.println(Wire.endTransmission(false));
 	if (Wire.endTransmission(false) != 0) return 0;
 	if (Wire.requestFrom((int)i2c_addr, 2) < 2) return 0;
 	val = Wire.read() << 8;
